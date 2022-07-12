@@ -10,6 +10,7 @@ logindata=os.getenv('logindata')
 idlist=pickleread('idlist.txt',[])
 freshtasks=[]
 md=''
+on=os.getenv('on')
 
 resp=s.post('https://c.29592.net/api/EarnUser/BangBangTuanV2',data=logindata,headers={'content-type':'application/json; charset=utf-8'}).json()
 tasklist=resp['tasklist']
