@@ -31,7 +31,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            ./
+            ./idlist.txt
           key: build-${{ github.run_id }}
           restore-keys: |
             build-
