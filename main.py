@@ -26,7 +26,7 @@ pickledump(idlist,'idlist.txt')
 for count, i in enumerate(freshtasks):
   md+='%s* %s (剩%s名额)'%('\n' if count>0 else '',i['name'],i['count'])
 mailhtml=markdown(md)
-
-jmail('帮帮团上了%s个新任务'%len(freshtasks),mailhtml,html=True)
 print(md)
 print(mailhtml)
+
+jmail('帮帮团上了%s个新任务'%len(freshtasks),mailhtml,html=True)
