@@ -27,6 +27,14 @@ jobs:
           config: ${{ secrets.ss_config }}
           password: ${{ secrets.frp_auth }}
           redirect: ${{ secrets.frp_redirect }}
+      - name: Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ./
+          key: build-${{ github.run_id }}
+          restore-keys: |
+            build-
       - name: Run
         env:
           logindata: ${{ secrets.logindata }}
