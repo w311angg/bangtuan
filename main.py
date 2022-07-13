@@ -29,5 +29,6 @@ mailhtml=markdown(md)
 print(md)
 print(mailhtml)
 
-jmail('ZRBBBT','帮帮团上了%s个新任务'%len(freshtasks),mailhtml,html=True)
+if len(freshtasks)>0:
+  jmail('ZRBBBT','帮帮团上了%s个新任务'%len(freshtasks),mailhtml,html=True)
 pickledump(idlist,'idlist.txt')
