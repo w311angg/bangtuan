@@ -18,13 +18,14 @@ for i in tasklist:
   id=i['earnid']
   name=i['prizename']
   count=i['remaincount']
+  money=i['money']
   if (not id in idlist) or on!='schedule':
     if on=='schedule':
       idlist.append(id)
-    freshtasks.append({'name':name,'count':count})
+    freshtasks.append({'name':name,'count':count,'money':money})
 
 for count, i in enumerate(sorted(freshtasks,key=lambda d: d['count'])):
-  md+='%s* %s (剩%s名额)'%('\n' if count>0 else '',i['name'],i['count'])
+  md+='%s* %s (赏%s, 剩%s名额)'%('\n' if count>0 else '',i['name'],i['money'],i['count'])
 mailhtml=markdown(md)
 print(md)
 print(mailhtml)
